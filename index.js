@@ -35,17 +35,18 @@ return   'Cannot have Salary lower than Base Salary!!!!'
 
 
 
-//if we made no sales, or if we somehow cost the company money
+//if jesse made no sales
 else if(paycheck === baseSalary){
   console.log('NO SALES')
   totalSales=  Math.round(quota + ((comPaid)*regComRate))
 }
-//if we sold up to the reg commission rate cutoff point of $6000 sales, aka the base salary + 360 dollars of commission
+//if jesse sold up to the reg commission rate cutoff point of $6000 sales, aka the base salary + 360 dollars of commission
 else if (baseSalary < paycheck && paycheck  <= (baseSalary+maxRegComPaid )){
  console.log('Getting Paid Regular Commission')
  totalSales = Math.round(quota +((paycheck- baseSalary) / regComRate))
 }
-       
+//otherwise jesse has entered bonus commission territory and is very happy! 
+//Looking at the return values for paycheck vs total sales, I kind of feel like Jesse is getting ripped off....
  else if( paycheck > (baseSalary + maxRegComPaid)){
   console.log('getting paid Bonus commission!')
 totalSales = Math.round(quota + maxRegComSales + bonComSales)
@@ -53,7 +54,7 @@ totalSales = Math.round(quota + maxRegComSales + bonComSales)
 
 return `Total Sales this month: $${totalSales}`
 }
-determineSales(89898)
+determineSales(5500)
 
 
 
